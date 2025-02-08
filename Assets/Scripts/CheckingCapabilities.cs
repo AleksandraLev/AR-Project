@@ -23,7 +23,7 @@ public class CheckingCapabilities : MonoBehaviour
         }
     }
 
-    void ARCoreChecker()
+    private void ARCoreChecker()
     {
         if (ARSession.state == ARSessionState.Unsupported || !IsARCoreSupported())
         {
@@ -43,7 +43,7 @@ public class CheckingCapabilities : MonoBehaviour
         return loader != null;
     }
 
-    void CameraPermissionChecker()
+    private void CameraPermissionChecker()
     {
         if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
         {
