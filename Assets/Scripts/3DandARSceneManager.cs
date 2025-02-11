@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class _3DSceneManager: MonoBehaviour
+public class _3DandARSceneManager: MonoBehaviour
 {
     public void OpenScene ()
     {
@@ -9,6 +9,8 @@ public class _3DSceneManager: MonoBehaviour
     }
     public void CloseScene()
     {
+        SceneManager.UnloadSceneAsync("3DScene");
+        SceneManager.UnloadSceneAsync("ARScene");
         SceneManager.UnloadSceneAsync("3DScene");
         SceneManager.UnloadSceneAsync("ARScene");
     }
