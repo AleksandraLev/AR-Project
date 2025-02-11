@@ -11,9 +11,13 @@ public class CheckingCapabilities : MonoBehaviour
 
     public void Checker()
     {
+#if UNITY_EDITOR
+        SceneManager.LoadSceneAsync("ARScene", LoadSceneMode.Additive);
+        return;
+#endif
         ARCoreChecker();
         CameraPermissionChecker();
-        if (ARCore && cameraPermission) 
+        if (ARCore && cameraPermission)
         {
             SceneManager.LoadSceneAsync("ARScene", LoadSceneMode.Additive);
         }
